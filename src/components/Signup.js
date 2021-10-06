@@ -7,6 +7,8 @@ export default function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  const nameRef = useRef();
+  const lastNameRef = useRef();
   const { signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -33,16 +35,38 @@ export default function Signup() {
       <Card>
         <Card.Body>
           <h2 className="text-center mb - 4">Sign up</h2>
-          {/* {currentUser.email} */}
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
+            <Form.Group id="name">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                type="name"
+                ref={nameRef}
+                placeholder="Please provide your name"
+                required
+              />
+            </Form.Group>
+            <Form.Group id="lastName">
+              <Form.Label>Family Name</Form.Label>
+              <Form.Control
+                type="lastName"
+                ref={lastNameRef}
+                placeholder="Please provide your last name"
+                required
+              />
+            </Form.Group>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
             <Form.Group id="password">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
+              <Form.Control
+                type="password"
+                ref={passwordRef}
+                placeholder="At least 8 character"
+                required
+              />
             </Form.Group>
             <Form.Group id="password-confirm">
               <Form.Label>Password Confirmation</Form.Label>
