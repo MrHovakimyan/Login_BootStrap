@@ -36,31 +36,31 @@ export default function Signup() {
         <Card.Body>
           <h2 className="text-center mb - 4">Sign up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
+          <br></br>
           <Form onSubmit={handleSubmit}>
             <Form.Group id="name">
-              <Form.Label>First Name</Form.Label>
               <Form.Control
                 type="name"
                 ref={nameRef}
-                placeholder="Please provide your name"
+                placeholder="First name"
                 required
               />
             </Form.Group>
+            <br></br>
             <Form.Group id="lastName">
-              <Form.Label>Family Name</Form.Label>
               <Form.Control
                 type="lastName"
                 ref={lastNameRef}
-                placeholder="Please provide your last name"
+                placeholder="Last name"
                 required
               />
             </Form.Group>
             <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
+              <Form.Label>Email*</Form.Label>
+              <Form.Control type="email" ref={emailRef} required placeholder="Please provide a valid email" />
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Password*</Form.Label>
               <Form.Control
                 type="password"
                 ref={passwordRef}
@@ -69,7 +69,7 @@ export default function Signup() {
               />
             </Form.Group>
             <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label>Password Confirmation*</Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
           </Form>

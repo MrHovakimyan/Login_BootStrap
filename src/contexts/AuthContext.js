@@ -50,7 +50,7 @@ export function AuthProvider({ children }) {
   };
   return (
     <AuthContext.Provider value={value}>
-      {!loading && children}
-    </AuthContext.Provider>
+      {!loading && children} 
+    </AuthContext.Provider> // to check if we're not loading then to setup children
   );
 }
